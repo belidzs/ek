@@ -10,7 +10,7 @@ function ipaAnswer(obj, value) {
   }
 }
 
-function fillOut() {
+function fillOut(pointsPerAnswer = 10) {
   let points = 0;
   for (let select of document.forms[0].getElementsByTagName("select")) {
     if (select.name === "ipa_answer_support[0]") {
@@ -19,7 +19,7 @@ function fillOut() {
     }
     console.debug("Next question: " + select.name);
     ipaAnswer(select.parentElement.children[11], 10);
-    points += 10;
+    points += pointsPerAnswer;
   }
   return points;
 }
