@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+    "name": "Egeszsegkonyha IPA helper",
+    "version": "1.0.1",
+    "description": "This extension will automatically fill the Egeszsegkonyha IPA feedback form with 10 stars to all questions so you don't have to. You can still edit your answers before submission.",
+    "icons": {
+        "48": "icons/ek-48.png",
+        "96": "icons/ek-96.png"
+    },
+    "content_scripts": [
+      {
+        "matches": [
+            "*://egeszsegkonyha.hu/index.php/etlapunk?survey=*",
+            "http://localhost/*"
+        ],
+        "js": [
+            "lib/jquery-3.6.0.js",
+            "js/ek.js"
+        ]
+      }
+    ]
+  }
